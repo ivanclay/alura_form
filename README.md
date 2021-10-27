@@ -10,6 +10,7 @@ A simple project as a way to study ReactJs.
 - [x] Create README
 - [ ] Install dependencies
     - [ ] ?
+- [x] Clear app structure
 - [ ] ---
     
 
