@@ -9,9 +9,9 @@ A simple project as a way to study ReactJs.
 - [x] Create project alura_form
 - [x] Create README
 - [ ] Install dependencies
-    - [ ] ?
+    - [ ] Material UI
 - [x] Clear app structure
-- [ ] ---
+- [ ] Import Material UI
     
 
 ## React version (17.0.2)
