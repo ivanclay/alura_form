@@ -13,6 +13,7 @@ A simple project as a way to study ReactJs.
 - [x] Clear app structure
 - [x] Import Material UI
 - [x] Add useState Hook
+- [x] Submit form data
     
 
 ## React version (17.0.2)

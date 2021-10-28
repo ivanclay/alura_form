@@ -2,18 +2,18 @@ import React, { useState } from 'react'
 import { TextField, Button, Switch, FormControlLabel  } from '@material-ui/core';
 
 
-function RegisterForm() {
+function RegisterForm({onSubmit}) {
 
     const [name, setName] = useState("");
     const [surname, setSurname] = useState("");
-    const [document, setDocument] = useState("");
-    const [promotions, setPromotions] = useState(false);
-    const [newsletter, setLewsletter] = useState(false);
+    const [cpf, setCpf] = useState("");
+    const [promotions, setPromotions] = useState(true);
+    const [newsletter, setNewsletter] = useState(true);
 
     return ( 
         <form onSubmit={(event) => {
             event.preventDefault();
-            console.log(name);
+            onSubmit({name, surname, cpf, promotions, newsletter});
         }}>
             <TextField 
                 value={name}
@@ -21,7 +21,7 @@ function RegisterForm() {
                 id="name" 
                 label="Name" 
                 variant="outlined" 
-                fullWidth="true" 
+                fullWidth
                 margin="normal" 
             /> 
             <TextField 
@@ -30,33 +30,45 @@ function RegisterForm() {
                 id="surname" 
                 label="Surname" 
                 variant="outlined" 
-                fullWidth="true" 
+                fullWidth 
                 margin="normal" 
             /> 
             <TextField 
-                value={document}
-                onChange={(event) => {setDocument(event.target.value)}}
-                id="document" 
-                label="Document" 
+                value={cpf}
+                onChange={(event) => {setCpf(event.target.value)}}
+                id="cpf" 
+                label="CPF" 
                 variant="outlined" 
-                fullWidth="true" 
+                fullWidth
                 margin="normal" 
             /> 
 
             <FormControlLabel 
                 label="Promotions"  
-                control={<Switch name="promotions"  defaultChecked={true} />}
+                control={
+                            <Switch 
+                                name="promotions"  
+                                checked={promotions}
+                                onChange={(event) => {setPromotions(event.target.checked)}}
+                            />
+                        }
             />
 
             <FormControlLabel 
                 label="News Letter"  
-                control={<Switch name="news-letter" defaultChecked={true}  />}
+                control={
+                            <Switch 
+                                name="news-letter" 
+                                checked={newsletter} 
+                                onChange={(event) => {setNewsletter(event.target.checked)}} 
+                            />
+                        }
             />
 
             
             
             
-            <Button variant="contained" color="primary">Register</Button>
+            <Button type="submit" variant="contained" color="primary">Register</Button>
         </form>  
     );
 }
