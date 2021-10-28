@@ -7,6 +7,8 @@ function RegisterForm() {
     const [name, setName] = useState("");
     const [surname, setSurname] = useState("");
     const [document, setDocument] = useState("");
+    const [promotions, setPromotions] = useState(false);
+    const [newsletter, setLewsletter] = useState(false);
 
     return ( 
         <form onSubmit={(event) => {
