@@ -2,7 +2,7 @@
 A simple project as a way to study ReactJs.
 
 ## Example
-![](demo/underconstruction.gif)
+![](demo/alura_simple_register_form.gif)
 
 ## Features
 
