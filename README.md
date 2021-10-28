@@ -14,6 +14,7 @@ A simple project as a way to study ReactJs.
 - [x] Import Material UI
 - [x] Add useState Hook
 - [x] Submit form data
+- [x] Validation field
     
 
 ## React version (17.0.2)

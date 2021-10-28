@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 import { TextField, Button, Switch, FormControlLabel  } from '@material-ui/core';
 
 
-function RegisterForm({onSubmit}) {
+function RegisterForm({onSubmit, isCpfValid}) {
 
     const [name, setName] = useState("");
     const [surname, setSurname] = useState("");
     const [cpf, setCpf] = useState("");
     const [promotions, setPromotions] = useState(true);
     const [newsletter, setNewsletter] = useState(true);
+    const [errors, setErrors] = useState({cpf: {isValid:true, text:""}});
 
     return ( 
         <form onSubmit={(event) => {
@@ -34,6 +35,12 @@ function RegisterForm({onSubmit}) {
                 margin="normal" 
             /> 
             <TextField 
+                error={!errors.cpf.isValid}
+                helperText={errors.cpf.text}
+                onBlur={(event) => {
+                    const isValid = isCpfValid(cpf);
+                    setErrors({cpf: isValid})
+                }}
                 value={cpf}
                 onChange={(event) => {setCpf(event.target.value)}}
                 id="cpf" 
