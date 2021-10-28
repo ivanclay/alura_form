@@ -1,15 +1,45 @@
-import React from 'react'
-// import Button from '@material-ui/core/Button';
-//import { TextField, Button, Switch  } from '@mui/material';
+import React, { useState } from 'react'
 import { TextField, Button, Switch, FormControlLabel  } from '@material-ui/core';
 
 
 function RegisterForm() {
+
+    const [name, setName] = useState("");
+    const [surname, setSurname] = useState("");
+    const [document, setDocument] = useState("");
+
     return ( 
-        <form>
-            <TextField id="name" label="Name" variant="outlined" fullWidth="true" margin="normal" /> 
-            <TextField id="surname" label="Surname" variant="outlined" fullWidth="true" margin="normal" /> 
-            <TextField id="document" label="Document" variant="outlined" fullWidth="true" margin="normal" /> 
+        <form onSubmit={(event) => {
+            event.preventDefault();
+            console.log(name);
+        }}>
+            <TextField 
+                value={name}
+                onChange={(event) => {setName(event.target.value)}}
+                id="name" 
+                label="Name" 
+                variant="outlined" 
+                fullWidth="true" 
+                margin="normal" 
+            /> 
+            <TextField 
+                 value={surname}
+                 onChange={(event) => {setSurname(event.target.value)}}
+                id="surname" 
+                label="Surname" 
+                variant="outlined" 
+                fullWidth="true" 
+                margin="normal" 
+            /> 
+            <TextField 
+                value={document}
+                onChange={(event) => {setDocument(event.target.value)}}
+                id="document" 
+                label="Document" 
+                variant="outlined" 
+                fullWidth="true" 
+                margin="normal" 
+            /> 
 
             <FormControlLabel 
                 label="Promotions"  

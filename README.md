@@ -11,7 +11,8 @@ A simple project as a way to study ReactJs.
 - [ ] Install dependencies
     - [ ] Material UI
 - [x] Clear app structure
-- [ ] Import Material UI
+- [x] Import Material UI
+- [x] Add useState Hook
     
 
 ## React version (17.0.2)
